@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form Layout</title>
+  <meta charset="utf-8">
+  <!--Things needed to incorporate boot strap-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- End of max cdn incorporations-->
+  
+  
+  <script type="text/javascript">
+	function ValidateEmail(inputText)
+	{
+		var atpos = inputText.indexOf("@");
+		var dotpos =inputText.lastIndexOf(".");
+		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=inputText.length) 
+		{
+			alert("Not a valid e-mail address");
+			document.getElementById("mailid").focus();
+			return false;
+		}
+	}
+	function formSubmit()
+	{
+		
+		if(confirm('Are you sure you want to submit??'))
+		{
+			alert('Submission successful');
+			document.getElementById("userinput").reset();
+		}
+		else alert('Form not submitted');
+	}
+  </script>
+</head>
+<body style="background-color:#E6E6FA">
+
+<div class="container-fluid">
+<h1 class="text-center">DragonBall Army</h1>
+  <div class="row">
+    <div class="col-sm-6 col-md-push-6">
+      <!-- Instructions -->
+	  <h3 class="text-center">Instructions</h3>
+	  <!-- End of instructions -->
+	  <div class="list-group">
+		<p class="list-group-item active text-center">Read the instructions carefully and fill the form.The company will not be held responsible for any mishaps</p>
+		<p class="list-group-item">Finding all 7 dragon balls is the preliminary goal</p>
+		<p class="list-group-item">Never ever talk punch dialogs in front of goku</p>
+		<p class="list-group-item">Always support goku even though krylln trains hard</p>
+		<p class="list-group-item">Never ever make lanch sneeze.You know why.</p>
+		<p class="list-group-item">Rajamatha must be protected at all cause</p>
+		<p class="list-group-item">Even though 5<sup>th</sup> looks odd,obey it without asking question</p>
+</div>
+    </div>
+	
+	
+    <div class="col-sm-6 col-md-pull-6">
+      <!-- Form -->
+	  <h3 class="text-center">Fill the form to join the army</h3>
+	  <form class="form-horizontal text-center" name="userinput" id="userinput" onsubmit="formSubmit()">
+		<div class="form-group">
+						<label for="fname" class="control-label col-sm-4">FirstName : </label>
+			<div class="col-sm-8 input-group">
+				<input type="text" class="form-control" id="fname" placeholder="Enter your FirstName"  required>
+				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="lname" class="control-label col-sm-4">LastName : </label>
+			<div class="col-sm-8 input-group">
+				
+				
+				<input type="text" class="form-control" id="lname" placeholder="Enter your LastName"  required>
+				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="mailid" class="control-label col-sm-4">Email : </label>
+			<div class="col-sm-8 input-group">
+				
+				<input type="email" class="form-control" id="mailid" placeholder="Enter your E-mail ID" onchange=ValidateEmail(this.value) required>
+				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="pass" class="control-label col-sm-4">Password : </label>
+			<div class="col-sm-8 input-group">
+				<input type="password" class="form-control" id="mailid" placeholder="Enter your Password" required>
+				<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="mob" class="control-label col-sm-4">Mobile : </label>
+			<div class="col-sm-8 input-group">
+				
+				<input type="number" class="form-control" id="mob" placeholder="Enter your contact number"  required>
+				<span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="dob" class="control-label col-sm-4">Date of Birth</label>
+			<div class="col-sm-8 input-group">
+				<input type="date" class="form-control" id="dob" placeholder="Date of Birth"  required>
+				<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<div class="btn-grp">
+					<button type="button" class="btn btn-primary" align="right" onclick="formSubmit()">Submit</button>
+					<input type="reset" class="btn btn-success">
+				</div>
+			</div>
+		</div>
+	  </form>
+	  <!-- End of Form -->
+    </div>
+	
+	
+  </div>
+</div>
+
+</body>
+</html>
